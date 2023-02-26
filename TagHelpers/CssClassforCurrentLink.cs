@@ -2,7 +2,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.AspNetCore.Mvc.ViewFeatures;
 using Microsoft.AspNetCore.Razor.TagHelpers;
 
-namespace TagHelpers.CssClassforCurrentLink;
+namespace TagHelpers.TagHelpers;
 
 [HtmlTargetElement(tag: "a", Attributes = TargetAttributeName)]
 public class CssClassforCurrentLink : TagHelper
