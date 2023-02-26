@@ -1,6 +1,11 @@
-var builder = WebApplication.CreateBuilder(args);
-var app = builder.Build();
+// ConfigureServices
+WebApplicationBuilder builder = WebApplication.CreateBuilder(args);
+builder.Services.AddControllersWithViews().AddRazorRuntimeCompilation();
 
-app.MapGet("/", () => "Hello World!");
-
+// Configure
+WebApplication app = builder.Build();
+app.UseDeveloperExceptionPage();
+app.UseStaticFiles();
+app.UseRouting();
+app.MapDefaultControllerRoute();
 app.Run();
