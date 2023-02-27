@@ -4,13 +4,13 @@ using Microsoft.AspNetCore.Razor.TagHelpers;
 
 namespace App.TagHelpers;
 
-[HtmlTargetElement(tag: "a", Attributes = TargetAttributeName)]
-public class CssClassforCurrentLink : TagHelper
+[HtmlTargetElement("a", Attributes = TargetAttributeName)]
+public class CssClassForCurrentLink : TagHelper
 {
     private const string TargetAttributeName = "asp-link-class";
 
     [ViewContext]
-    public ViewContext? ViewContext { get; set; } 
+    public ViewContext? ViewContext { get; set; }
 
     [HtmlAttributeName("class")]
     public string? Classes { get; set; }
@@ -35,4 +35,3 @@ public class CssClassforCurrentLink : TagHelper
         output.Attributes.Remove(attributes);
     }
 }
-
