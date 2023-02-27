@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 
-namespace TagHelpers.Controllers;
+namespace App.Controllers;
 
 public class HomeController : Controller
 {

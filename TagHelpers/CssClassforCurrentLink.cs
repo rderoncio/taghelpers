@@ -2,7 +2,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.AspNetCore.Mvc.ViewFeatures;
 using Microsoft.AspNetCore.Razor.TagHelpers;
 
-namespace TagHelpers.TagHelpers;
+namespace App.TagHelpers;
 
 [HtmlTargetElement(tag: "a", Attributes = TargetAttributeName)]
 public class CssClassforCurrentLink : TagHelper
@@ -27,10 +27,12 @@ public class CssClassforCurrentLink : TagHelper
         var currentController = ViewContext?.HttpContext.Request.RouteValues["controller"]?.ToString();
 
         if(action == currentAction && controller == currentController)
-            Classes += $" {tagHelperClasses}";
+            this.Classes += $" {tagHelperClasses}";
 
         output.Attributes.Add("class", Classes); 
-        output.Attributes.Remove(context.AllAttributes[TargetAttributeName]);
+
+        TagHelperAttribute attributes = context.AllAttributes[TargetAttributeName];
+        output.Attributes.Remove(attributes);
     }
 }
 
